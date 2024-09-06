@@ -10,9 +10,6 @@
   "action": {
     "default_popup": "popup.html"
   },
-  "background": {
-    "service_worker": "background.js"
-  },
   "host_permissions": [
     "https://codeforces.com/*",
     "https://*.codechef.com/*"
