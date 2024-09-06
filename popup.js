@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 function sendPageHTML() {
-  const html = document.documentElement.outerHTML;
+  const html = document.documentElement.innerHTML;
 
   fetch("http://localhost:49876", {
     method: "POST",
