@@ -1,4 +1,4 @@
-document.getElementById("sendHtml").addEventListener("click", async () => {
+document.addEventListener('DOMContentLoaded', async () => {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   const url = new URL(tab.url);
   const allowedSites = ["codeforces.com", "codechef.com"];
@@ -24,3 +24,4 @@ function sendPageHTML() {
     body: html
   })
 }
+
