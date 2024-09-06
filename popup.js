@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 function sendPageHTML() {
   const html = document.documentElement.outerHTML;
 
-  fetch("http://localhost:5001", {
+  fetch("http://localhost:49876", {
     method: "POST",
     headers: {
       "Content-Type": "text/plain"
