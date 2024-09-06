@@ -2,14 +2,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   const url = new URL(tab.url);
   const allowedSites = ["codeforces.com", "codechef.com"];
-
+  let mark = document.querySelector('.mark');
   if (allowedSites.includes(url.hostname)) {
     chrome.scripting.executeScript({
       target: { tabId: tab.id },
       function: sendPageHTML
     });
+    mark.innerHTML = "✅ Open VS Code";
   } else {
-    alert("This extension only works on Codeforces or CodeChef.");
+    mark.textContent = "❌ Unsupported";
   }
 });
 
@@ -25,3 +26,7 @@ function sendPageHTML() {
   })
 }
 
+
+setTimeout(() => {
+  window.close();
+}, 3000);
